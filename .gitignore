@@ -98,4 +98,7 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 
+# vsCode
+.vscode
+
 # End of https://www.gitignore.io/api/swift,macos
