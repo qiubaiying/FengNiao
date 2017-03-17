@@ -8,11 +8,13 @@
 
 import Foundation
 
-protocol sreingsSearcher {
+protocol stringsSearcher {
     func search(in comtent: String) -> Set<String>
 }
 
-protocol RegexStringsSearcher: sreingsSearcher {
+/// 正则表达式搜索
+protocol RegexStringsSearcher: stringsSearcher {
+    var extensions: [String] { get }
     var patterns: [String] { get }
 }
 
@@ -32,7 +34,7 @@ extension RegexStringsSearcher {
             for checkingResult in metches {
                 let renge = checkingResult.rangeAt(1)
                 let extracted = NSString(string: content).substring(with: renge)
-                result.insert(extracted.plainName)
+                result.insert(extracted.plainName(extensions: extensions))
                 
             }
             
@@ -42,4 +44,29 @@ extension RegexStringsSearcher {
     }
 }
 
+struct SwiftSearcher: RegexStringsSearcher {
+    let extensions: [String]
+    let patterns = ["\"(.+?)\""]
+}
 
+struct ObjCSearcher: RegexStringsSearcher {
+    let extensions: [String]
+    let patterns = ["@\"(.+?)\"", "\"(.+?)\""]
+}
+
+struct XibSearcher: RegexStringsSearcher {
+    let extensions: [String]
+    let patterns = ["image name=\"(.+?)\""]
+}
+
+struct GeneralSearcher: RegexStringsSearcher {
+    let extensions: [String]
+    var patterns: [String] {
+        if extensions.isEmpty {
+            return []
+        }
+        
+        let joined = extensions.joined(separator: "|")
+        return ["\"(.+?)\\.(\(joined))\""]
+    }
+}

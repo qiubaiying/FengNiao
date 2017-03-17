@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_52"
+               BlueprintIdentifier = "OBJ_53"
                BuildableName = "CommandLineKit.framework"
                BlueprintName = "CommandLineKit"
                ReferencedContainer = "container:FengNiao.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_61"
+               BlueprintIdentifier = "OBJ_62"
                BuildableName = "Rainbow.framework"
                BlueprintName = "Rainbow"
                ReferencedContainer = "container:FengNiao.xcodeproj">
@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_78"
+               BlueprintIdentifier = "OBJ_79"
                BuildableName = "Spectre.framework"
                BlueprintName = "Spectre"
                ReferencedContainer = "container:FengNiao.xcodeproj">
@@ -56,7 +56,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_92"
+               BlueprintIdentifier = "OBJ_93"
                BuildableName = "PathKit.framework"
                BlueprintName = "PathKit"
                ReferencedContainer = "container:FengNiao.xcodeproj">
@@ -70,7 +70,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_101"
+               BlueprintIdentifier = "OBJ_102"
                BuildableName = "FengNiao"
                BlueprintName = "FengNiao"
                ReferencedContainer = "container:FengNiao.xcodeproj">
@@ -84,7 +84,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_118"
+               BlueprintIdentifier = "OBJ_119"
                BuildableName = "FengNiaoKit.framework"
                BlueprintName = "FengNiaoKit"
                ReferencedContainer = "container:FengNiao.xcodeproj">
@@ -102,9 +102,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_135"
-               BuildableName = "FengNiaoKirTests.xctest"
-               BlueprintName = "FengNiaoKirTests"
+               BlueprintIdentifier = "OBJ_136"
+               BuildableName = "FengNiaoKitTests.xctest"
+               BlueprintName = "FengNiaoKitTests"
                ReferencedContainer = "container:FengNiao.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -125,7 +125,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "OBJ_52"
+            BlueprintIdentifier = "OBJ_53"
             BuildableName = "CommandLineKit.framework"
             BlueprintName = "CommandLineKit"
             ReferencedContainer = "container:FengNiao.xcodeproj">

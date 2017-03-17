@@ -16,17 +16,24 @@ extension String {
         return NSMakeRange(0, utf8.count)
     }
     
-    /// 获取去掉后缀的图片名
-    var plainName: String {
-        let p = Path(self)
+    /// 获取去掉后缀及@2x@3x的图片名
+    func plainName(extensions: [String]) -> String {
+        let p = Path(self.lowercased())// A -> a
+        var result: String
+        
         // 去掉扩展名
-        var result = p.lastComponentWithoutExtension
+        if let ext = p.extension, extensions.contains(ext) {
+            result = p.lastComponentWithoutExtension
+        } else {
+            result = p.lastComponent
+        }
         
         if result.hasSuffix("@2x") || result.hasSuffix("@3x") {
-        
+            
             result = String(describing: result.utf16.dropLast(3))
         }
         return result
     }
+    
     
 }
