@@ -33,21 +33,25 @@ public struct FileInfo {
 public struct FengNiao {
     
     let projectPath: Path
-    let exculudePaths: [Path]
+    let excludePaths: [Path]
     let resouceExtenions: [String]
     let fileExtenions: [String]
     
-    public init(projectPath: String, exculudePaths: [String],resouceExtenions: [String], fileExtenions: [String]) {
+    public init(projectPath: String, excludePaths: [String],resouceExtenions: [String], fileExtenions: [String]) {
         
         let path = Path(projectPath).absolute()
         self.projectPath = path
-        self.exculudePaths = exculudePaths.map{path + Path($0)}
+        self.excludePaths = excludePaths.map{path + Path($0)}
         self.resouceExtenions = resouceExtenions
         self.fileExtenions = fileExtenions
     }
     
     public func unuserdResource() -> [FileInfo] {
         fatalError()
+    }
+    
+    public func allStringsInUse() -> Set<String> {
+        return stringsInUse(at: projectPath)
     }
     
     func stringsInUse(at path: Path) -> Set<String> {
@@ -64,7 +68,7 @@ public struct FengNiao {
                 continue
             }
             
-            if exculudePaths.contains(subPath) {
+            if excludePaths.contains(subPath) {
                 continue
             }
             

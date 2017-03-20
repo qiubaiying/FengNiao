@@ -9,14 +9,16 @@
 import Foundation
 import Spectre
 @testable import FengNiaoKit
+import PathKit
 
 public func specFengNiaoKit() {
 
     describe("FengNiao") {
         
+        let fixtures = Path(#file).parent().parent() + "Fixtures"
         
+        // 测试 String 处理
         $0.describe("String Extenion") {
-            
             $0.it("should return plain name") {
                 let s1 = "image@2x.tmp"
                 let s2 = "/usr/local/bin/find"
@@ -35,6 +37,7 @@ public func specFengNiaoKit() {
 
         }
         
+        // 测试 String Searchers
         $0.describe("String Searchers") {
             $0.it("Swift searcher works") {
                 let s1 = "UIImage(named:\"my_image\")"
@@ -53,6 +56,38 @@ public func specFengNiaoKit() {
                 try expect(result[2]) == Set(["close_button"])
                 try expect(result[3]) == Set(["local"])
                 try expect(result[4]) == Set(["local.host"])
+            }
+        }
+        
+        $0.describe("FengNiaoKit Function") {
+            
+            let path = fixtures + "StringSearcher"
+            
+            $0.it("should find used string in swift") {
+                
+                let fengniao = FengNiao(projectPath: path.string, excludePaths: [], resouceExtenions: ["png", "jpg"], fileExtenions: ["swift"])
+                let result = fengniao.allStringsInUse()
+
+                let expectd: Set<String> = ["common.login",
+                                            "common.logout",
+                                            "live_btn_connect",
+                                            "live_btn_connect",
+                                            "name_key",
+                                            "无法支持"]
+                try expect(result) == expectd
+            }
+            
+            $0.it("should find used string in objc") {
+                let fengniao = FengNiao(projectPath: path.string, excludePaths: [], resouceExtenions: ["png", "jpg"], fileExtenions: ["m", "mm"])
+                let result = fengniao.allStringsInUse()
+                
+                let expectd: Set<String> = ["image",
+                                            "image-from-mm.jpg",
+                                            "c",
+                                            "name-of-mm",
+                                            "info.error.memory.full.confirm",
+                                            "info.error.memory.full.ios"]
+                try expect(result) == expectd
             }
         }
     }

@@ -13,7 +13,7 @@ import PathKit
 extension String {
     /// 获取string range
     var fullRange: NSRange {
-        return NSMakeRange(0, utf8.count)
+        return NSMakeRange(0, utf16.count)
     }
     
     /// 获取去掉后缀及@2x@3x的图片名
