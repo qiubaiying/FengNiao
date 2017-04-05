@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36EA91531E7FD0C100225187 /* FileProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA91521E7FD0C100225187 /* FileProcess.swift */; };
 		OBJ_100 /* Spectre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* Spectre.framework */; };
 		OBJ_107 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* main.swift */; };
 		OBJ_109 /* CommandLineKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* CommandLineKit.framework */; };
@@ -162,6 +163,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		36EA91521E7FD0C100225187 /* FileProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileProcess.swift; sourceTree = "<group>"; };
 		OBJ_10 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		OBJ_11 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		OBJ_13 /* BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColor.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 			children = (
 				OBJ_39 /* FengNiaoKit.swift */,
 				OBJ_40 /* StringsSearchRule.swift */,
+				36EA91521E7FD0C100225187 /* FileProcess.swift */,
 				OBJ_38 /* Extensions.swift */,
 			);
 			name = FengNiaoKit;
@@ -576,6 +579,7 @@
 				OBJ_124 /* Extensions.swift in Sources */,
 				OBJ_125 /* FengNiaoKit.swift in Sources */,
 				OBJ_126 /* StringsSearchRule.swift in Sources */,
+				36EA91531E7FD0C100225187 /* FileProcess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

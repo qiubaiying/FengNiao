@@ -97,10 +97,12 @@ public struct FengNiao {
     
     
     func resourcesInUse() -> [String: String] {
-        fatalError()
+        let process = FindProcess(path: <#T##Path#>, extenstions: <#T##[String]#>, excludes: <#T##[Path]#>)
     }
+    
     
     public func delete() -> () {
         fatalError()
+        
     }
 }
